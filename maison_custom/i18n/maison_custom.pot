@@ -1,0 +1,56 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* maison_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-16 01:58+0000\n"
+"PO-Revision-Date: 2022-11-16 01:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: maison_custom
+#: model:ir.model.fields,field_description:maison_custom.field_res_partner__birthday
+msgid "Birthday"
+msgstr ""
+
+#. module: maison_custom
+#: model:ir.model,name:maison_custom.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: maison_custom
+#: model:ir.model.fields,field_description:maison_custom.field_mrp_production__customer
+msgid "Customer"
+msgstr ""
+
+#. module: maison_custom
+#: model:ir.model.fields.selection,name:maison_custom.selection__res_partner__gender__female
+msgid "Female"
+msgstr ""
+
+#. module: maison_custom
+#: model:ir.model.fields,field_description:maison_custom.field_res_partner__gender
+msgid "Gender"
+msgstr ""
+
+#. module: maison_custom
+#: model:ir.model.fields.selection,name:maison_custom.selection__res_partner__gender__male
+msgid "Male"
+msgstr ""
+
+#. module: maison_custom
+#: model:ir.model,name:maison_custom.model_mrp_production
+msgid "Production Order"
+msgstr ""
+
+#. module: maison_custom
+#: model:ir.model.fields,field_description:maison_custom.field_mrp_production__scendy
+msgid "Scendy"
+msgstr ""
