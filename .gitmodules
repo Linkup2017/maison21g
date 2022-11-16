@@ -12,3 +12,8 @@
 	path = pos_inicis
 	url = git@github.com:Linkup2017/linkup-package.git
 	branch = 16.0
+
+[submodule "addons/pos_inicis"]
+	path = addons/pos_inicis
+	url = git@github.com:Linkup2017/linkup-package.git
+	branch = 16.0
