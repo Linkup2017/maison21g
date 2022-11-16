@@ -1,0 +1,37 @@
+<odoo noupdate="0">
+
+<!--        <record id="module_category_linkup_account" model="ir.module.category">-->
+<!--            <field name="name">Etax Bank</field>-->
+<!--            <field name="sequence">20</field>-->
+<!--        </record>-->
+
+        <record id="group_linkup_account_manger" model="res.groups">
+            <field name="name">Account Password</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="implied_ids" eval="[(4, ref('base.user_admin'))]" />
+        </record>
+
+        <record id="module_category_linkup_hometax" model="ir.module.category">
+            <field name="name">Hometax Bank</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="group_linkup_hometax_user" model="res.groups">
+            <field name="name">Linkup hometax User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+            <field name="category_id" ref="module_category_linkup_hometax" />
+        </record>
+
+        <record id="group_linkup_hometax_manager" model="res.groups">
+            <field name="name">Linkup hometax Manager</field>
+            <field name="category_id" ref="module_category_linkup_hometax" />
+            <field
+            name="implied_ids"
+            eval="[(4, ref('group_linkup_hometax_user'))]"
+        />
+            <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+        </record>
+</odoo>

@@ -1,0 +1,1 @@
+from . import inheirt_model
