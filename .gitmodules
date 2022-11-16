@@ -1,0 +1,4 @@
+[submodule "Linkup2017/maison21g"]
+	path = Linkup2017/maison21g
+	url = git@github.com:Linkup2017/maison21g.git
+	branch = main
