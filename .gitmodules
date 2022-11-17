@@ -1,28 +1,3 @@
-[submodule "Linkup2017/maison21g"]
-	path = Linkup2017/maison21g
-	url = git@github.com:Linkup2017/maison21g.git
-	branch = main
-
-[submodule "addons"]
-	path = addons
-	url = git@github.com:Linkup2017/linkup-package.git
-	branch = 16.0
-
-[submodule "pos_inicis"]
-	path = pos_inicis
-	url = git@github.com:Linkup2017/linkup-package.git
-	branch = 16.0
-
-[submodule "addons/pos_inicis"]
-	path = addons/pos_inicis
-	url = git@github.com:Linkup2017/linkup-package.git
-	branch = 16.0
-
-[submodule "Linkup2017/linkup-package"]
-	path = Linkup2017/linkup-package
-	url = git@github.com:Linkup2017/linkup-package.git
-	branch = 16.0
-
 [submodule "Linkup2017/linkup-package"]
 	path = Linkup2017/linkup-package
 	url = git@github.com:Linkup2017/linkup-package.git
