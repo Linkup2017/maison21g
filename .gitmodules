@@ -2,3 +2,8 @@
 	path = Linkup2017/linkup-package
 	url = git@github.com:Linkup2017/linkup-package.git
 	branch = 16.0
+
+[submodule "Linkup2017/linkup-package-test"]
+	path = Linkup2017/linkup-package-test
+	url = git@github.com:Linkup2017/linkup-package.git
+	branch = 16.0
