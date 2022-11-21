@@ -26,8 +26,8 @@ jobs:
     - name: Git Sumbodule Update
       run: |
         git pull --recurse-submodules
-        git submodule foreach git checkout -b 16.0
-        git submodule update --remote --recursive --merge
+        git config -f .gitmodules submodule.Linkup2017/linkup-package.branch 16.0        
+        git submodule update --remote --recursive
     - name: Commit update
       run: |
         git config --global user.name 'linkup2017'
