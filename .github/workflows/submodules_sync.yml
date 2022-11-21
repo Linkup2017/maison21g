@@ -25,8 +25,8 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
-        git pull origin main --recurse-submodules
-        git submodule update --remote --recursive
+        git pull --recurse-submodules
+        git submodule update --remote --recursive --single-branch
     - name: Commit update
       run: |
         git config --global user.name 'linkup2017'
