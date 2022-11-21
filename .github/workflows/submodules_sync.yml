@@ -25,10 +25,7 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
-        git pull --recurse-submodules
-        git submodule set-branch --default Linkup2017/linkup-package
-        git submodule update --remote --recursive
-        git submodule set-branch --branch 16.0 Linkup2017/linkup-package
+        git submodule update --remote
     - name: Commit update
       run: |
         git config --global user.name 'linkup2017'
