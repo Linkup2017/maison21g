@@ -25,7 +25,7 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
-        git submodule update --remote
+        git submodule update --remote --checkout
     - name: Commit update
       run: |
         git config --global user.name 'linkup2017'
