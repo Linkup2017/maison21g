@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="PartnerDetailsEdit" t-inherit="point_of_sale.PartnerDetailsEdit" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('partner-details-box')]" position="replace">
+            <div class="partner-details-box clearfix">
+                <div class="partner-details-left">
+                    <div class="partner-detail">
+                        <span class="label">Sales Person</span>
+                        <select class="detail" name="user_id"
+                                t-on-change="captureChange">
+                            <t t-foreach="env.pos.pos_users" t-as="user" t-key="user.id">
+                                <option t-att-value="user.id"
+                                        t-att-selected="props.partner.user_id ? ((user.id === props.partner.user_id[0]) ? true : undefined) : undefined">
+                                    <t t-esc="user.name" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Gender</span>
+                        <select class="detail" name="gender"
+                                t-on-change="captureChange">
+                            <t t-foreach="env.pos.gender_selection" t-as="gender" t-key="gender.value">
+                                <option t-att-value="gender.value"
+                                        t-att-selected="props.partner.gender ? ((gender.value === props.partner.gender[0]) ? true : undefined) : undefined">
+                                    <t t-esc="gender.value" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Birthday</span>
+                        <input class="detail" name="birthday"
+                               t-on-change="captureChange"
+                               t-att-value="props.partner.birthday || ''"
+                               placeholder="YYYY-MM-DD" />
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Email</span>
+                        <input class="detail" name="email" type="email"
+                               t-on-change="captureChange"
+                               t-att-value="props.partner.email || ''" />
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Phone</span>
+                        <input class="detail" name="phone" type="tel"
+                               t-on-change="captureChange"
+                               t-att-value="props.partner.phone || ''" />
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Barcode</span>
+                        <input class="detail barcode" name="barcode" t-on-change="captureChange"
+                               t-att-value="props.partner.barcode || ''" />
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Language</span>
+                        <select class="detail" name="lang"
+                                t-on-change="captureChange">
+                            <t t-foreach="env.pos.langs" t-as="lang" t-key="lang.id">
+                                <option t-att-value="lang.code"
+                                        t-att-selected="props.partner.lang ? ((lang.code === props.partner.lang) ? true : undefined) : lang.code === env.pos.user.lang? true : undefined">
+                                    <t t-esc="lang.name" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+                <div class="partner-details-right">
+                    <div class="partner-detail">
+                        <span class="label">Street</span>
+                        <input class="detail" name="street"
+                               t-on-change="captureChange" t-att-value="props.partner.street || ''"
+                               placeholder="Street" />
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">City</span>
+                        <input class="detail" name="city"
+                               t-on-change="captureChange" t-att-value="props.partner.city || ''"
+                               placeholder="City" />
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Postcode</span>
+                        <input class="detail" name="zip"
+                               t-on-change="captureChange" t-att-value="props.partner.zip || ''"
+                               placeholder="ZIP" />
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">State</span>
+                        <select class="detail" name="state_id"
+                                t-on-change="captureChange">
+                            <option value="">None</option>
+                            <t t-foreach="env.pos.states" t-as="state" t-key="state.id">
+                                <option t-if="props.partner.country_id[0] == state.country_id[0]"
+                                        t-att-value="state.id"
+                                        t-att-selected="props.partner.state_id ? ((state.id === props.partner.state_id[0]) ? true : undefined) : undefined">
+                                    <t t-esc="state.name" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Country</span>
+                        <select class="detail" name="country_id"
+                                t-on-change="captureChange">
+                            <option value="">None</option>
+                            <t t-foreach="env.pos.countries" t-as="country" t-key="country.id">
+                                <option t-att-value="country.id"
+                                        t-att-selected="props.partner.country_id ? ((country.id === props.partner.country_id[0]) ? true : undefined) : undefined">
+                                    <t t-esc="country.name" />
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="partner-detail">
+                        <span class="label">Tax ID</span>
+                        <input class="detail vat" name="vat" t-on-change="captureChange"
+                               t-att-value="props.partner.vat || ''" />
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+
+</templates>
