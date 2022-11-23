@@ -3,7 +3,6 @@
 
 from odoo import models
 
-
 class PosSession(models.Model):
     _inherit = 'pos.session'
 
@@ -23,3 +22,8 @@ class PosSession(models.Model):
         if self.config_id.module_pos_maison:
             loaded_data['pos_users'] = self._get_pos_users()
             loaded_data['gender_selection'] = self._get_gender_selection()
+
+    def _loader_params_res_partner(self):
+        result = super()._loader_params_res_partner()
+        result['search_params']['fields'].extend(['gender', 'birthday'])
+        return result

@@ -23,7 +23,7 @@
                                 t-on-change="captureChange">
                             <t t-foreach="env.pos.gender_selection" t-as="gender" t-key="gender.value">
                                 <option t-att-value="gender.value"
-                                        t-att-selected="props.partner.gender ? ((gender.value === props.partner.gender[0]) ? true : undefined) : undefined">
+                                        t-att-selected="props.partner.gender ? ((gender.value === props.partner.gender) ? true : undefined) : undefined">
                                     <t t-esc="gender.value" />
                                 </option>
                             </t>
@@ -31,10 +31,9 @@
                     </div>
                     <div class="partner-detail">
                         <span class="label">Birthday</span>
-                        <input class="detail" name="birthday"
+                        <input class="detail" name="birthday" type="date"
                                t-on-change="captureChange"
-                               t-att-value="props.partner.birthday || ''"
-                               placeholder="YYYY-MM-DD" />
+                               t-att-value="props.partner.birthday || ''" />
                     </div>
                     <div class="partner-detail">
                         <span class="label">Email</span>

@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    birthday = fields.Datetime(string='Birthday')
+    birthday = fields.Date(string='Birthday')
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender", default="male")
 
 
