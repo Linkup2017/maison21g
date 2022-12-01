@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html). -->
+<odoo noupdate="1">
+    <record id="namespace_maison21g" model="openapi.namespace">
+        <field name="name">maison21g</field>
+        <field name="log_request">debug</field>
+        <field name="log_response">debug</field>
+        <field name="token">maison21g_token</field>
+        <field name="user_ids" eval="[(4, ref('base.user_admin'))]" />
+    </record>
+    <record id="ir_exports_res_partner_one_maison21g" model="ir.exports">
+        <field name="name">read_one</field>
+        <field name="resource">res.partner</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'email'}),
+(0, 0, {'name': 'phone'}),
+]"
+        />
+    </record>
+    <record id="ir_exports_res_partner_many_maison21g" model="ir.exports">
+        <field name="name">read_many</field>
+        <field name="resource">res.partner</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'email'}),
+(0, 0, {'name': 'phone'}),
+]"
+        />
+    </record>
+    <record id="access_res_partner_maison21g" model="openapi.access">
+        <field name="namespace_id" ref="namespace_maison21g" />
+        <field name="model_id" ref="base.model_res_partner" />
+        <field name="api_create" eval="True" />
+        <field name="api_read" eval="True" />
+        <field name="api_update" eval="True" />
+        <field name="api_delete" eval="True" />
+        <field name="api_public_methods" eval="True" />
+        <field name="private_methods">_email_send</field>
+        <field name="read_one_id" ref="ir_exports_res_partner_one_maison21g" />
+        <field name="read_many_id" ref="ir_exports_res_partner_many_maison21g" />
+    </record>
+    <record id="ir_exports_product_product_one_maison21g" model="ir.exports">
+        <field name="name">read_one</field>
+        <field name="resource">product.product</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'default_code'}),
+]"
+        />
+    </record>
+    <record id="ir_exports_product_product_many_maison21g" model="ir.exports">
+        <field name="name">read_many</field>
+        <field name="resource">product.product</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'default_code'}),
+]"
+        />
+    </record>
+    <record id="access_product_product_maison21g" model="openapi.access">
+        <field name="namespace_id" ref="namespace_maison21g" />
+        <field name="model_id" ref="product.model_product_product" />
+        <field name="api_create" eval="False" />
+        <field name="api_read" eval="True" />
+        <field name="api_update" eval="False" />
+        <field name="api_delete" eval="False" />
+        <field name="api_public_methods" eval="True" />
+        <field name="read_one_id" ref="ir_exports_product_product_one_maison21g" />
+        <field name="read_many_id" ref="ir_exports_product_product_many_maison21g" />
+    </record>
+    <record id="ir_exports_sale_order_one_maison21g" model="ir.exports">
+        <field name="name">read_one</field>
+        <field name="resource">sale.order</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'partner_id'}),
+(0, 0, {'name': 'order_line'}),
+]"
+        />
+    </record>
+    <record id="ir_exports_sale_order_many_maison21g" model="ir.exports">
+        <field name="name">read_many</field>
+        <field name="resource">sale.order</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'partner_id'}),
+(0, 0, {'name': 'order_line'}),
+]"
+        />
+    </record>
+    <record id="access_sale_order_maison21g" model="openapi.access">
+        <field name="namespace_id" ref="namespace_maison21g" />
+        <field name="model_id" ref="sale.model_sale_order" />
+        <field name="api_create" eval="True" />
+        <field name="api_read" eval="True" />
+        <field name="api_update" eval="True" />
+        <field name="api_delete" eval="True" />
+        <field name="api_public_methods" eval="True" />
+        <field name="read_one_id" ref="ir_exports_sale_order_one_maison21g" />
+        <field name="read_many_id" ref="ir_exports_sale_order_many_maison21g" />
+    </record>
+    <record id="ir_exports_mrp_production_one_maison21g" model="ir.exports">
+        <field name="name">read_one</field>
+        <field name="resource">mrp.production</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'product_id'}),
+]"
+        />
+    </record>
+    <record id="ir_exports_mrp_production_many_maison21g" model="ir.exports">
+        <field name="name">read_many</field>
+        <field name="resource">mrp.production</field>
+        <field
+            name="export_fields"
+            eval="[
+(0, 0, {'name': 'id'}),
+(0, 0, {'name': 'name'}),
+(0, 0, {'name': 'product_id'}),
+]"
+        />
+    </record>
+    <record id="access_mrp_production_maison21g" model="openapi.access">
+        <field name="namespace_id" ref="namespace_maison21g" />
+        <field name="model_id" ref="mrp.model_mrp_production" />
+        <field name="api_create" eval="False" />
+        <field name="api_read" eval="True" />
+        <field name="api_update" eval="False" />
+        <field name="api_delete" eval="False" />
+        <field name="api_public_methods" eval="True" />
+        <field name="read_one_id" ref="ir_exports_mrp_production_one_maison21g" />
+        <field name="read_many_id" ref="ir_exports_mrp_production_many_maison21g" />
+    </record>
+</odoo>
