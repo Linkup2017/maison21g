@@ -10,7 +10,7 @@
     "support": "",
     "website": "",
     "license": "LGPL-3",
-    "depends": ["openapi"],
+    "depends": ["openapi", 'sale', 'product', 'mrp'],
     "data": [
         "data/openapi_data.xml",
     ],

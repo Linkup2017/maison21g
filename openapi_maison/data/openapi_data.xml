@@ -41,8 +41,7 @@
         <field name="api_read" eval="True" />
         <field name="api_update" eval="True" />
         <field name="api_delete" eval="True" />
-        <field name="api_public_methods" eval="True" />
-        <field name="private_methods">_email_send</field>
+        <field name="api_public_methods" eval="False" />
         <field name="read_one_id" ref="ir_exports_res_partner_one_maison21g" />
         <field name="read_many_id" ref="ir_exports_res_partner_many_maison21g" />
     </record>
@@ -77,7 +76,7 @@
         <field name="api_read" eval="True" />
         <field name="api_update" eval="False" />
         <field name="api_delete" eval="False" />
-        <field name="api_public_methods" eval="True" />
+        <field name="api_public_methods" eval="False" />
         <field name="read_one_id" ref="ir_exports_product_product_one_maison21g" />
         <field name="read_many_id" ref="ir_exports_product_product_many_maison21g" />
     </record>
@@ -115,6 +114,7 @@
         <field name="api_update" eval="True" />
         <field name="api_delete" eval="True" />
         <field name="api_public_methods" eval="True" />
+        <field name="public_methods">get_order_info</field>
         <field name="read_one_id" ref="ir_exports_sale_order_one_maison21g" />
         <field name="read_many_id" ref="ir_exports_sale_order_many_maison21g" />
     </record>
@@ -149,7 +149,7 @@
         <field name="api_read" eval="True" />
         <field name="api_update" eval="False" />
         <field name="api_delete" eval="False" />
-        <field name="api_public_methods" eval="True" />
+        <field name="api_public_methods" eval="False" />
         <field name="read_one_id" ref="ir_exports_mrp_production_one_maison21g" />
         <field name="read_many_id" ref="ir_exports_mrp_production_many_maison21g" />
     </record>
